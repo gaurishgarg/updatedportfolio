@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | MyPortfolios</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/new.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">MyPortfolios</div>
+      </div>
+    </div>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        var canvas = document.getElementById("unityContainer");
+        
+        canvas.style.width = "393px";
+        canvas.style.height = "873px";
+        canvas.style.position = "auto";
+
+        document.body.style.textAlign = "center";
+      }
+      if (/Desktop|Laptop|PC|Windows|Mac/i.test(navigator.userAgent)) {
+        
+        //var meta = document.createElement('meta');
+        //meta.name = 'viewport';
+        //meta.content = 'width=device.width, height=device.height, initial-scale=1.0, user-scalable=yes, shrink-to-fit=yes';
+        //document.getElementsByTagName('head')[0].appendChild(meta);
+        
+        var canvas = document.getElementById("unityContainer");
+        canvas.style.width = "888px";
+        canvas.style.height = "369px";
+        canvas.style.position = "auto";
+
+        document.body.style.textAlign = "center";
+      }
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Myupdates.json", {onProgress: UnityProgress});
+    </script>
+  </body>
+</html>
